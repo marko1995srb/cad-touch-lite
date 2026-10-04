@@ -10,6 +10,13 @@
 <meta property="og:title" content="CAD Touch Lite – DWG &amp; DXF viewer for touchscreens">
 <meta property="og:description" content="Pinch, pan and measure with your finger. Fast, lightweight and fully offline.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://marko1995srb.github.io/cad-touch-lite/">
+<meta property="og:image" content="https://marko1995srb.github.io/cad-touch-lite/img/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://marko1995srb.github.io/cad-touch-lite/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CAD Touch Lite (DWG & DXF Viewer)","description":"Touch DWG and DXF viewer for Windows tablets. Pinch, pan and measure with your finger – fast, offline and native on ARM64 (Windows 11 24H2+).","applicationCategory":"DesignApplication","operatingSystem":"Windows 10 (version 1809 or newer), Windows 11","url":"https://marko1995srb.github.io/cad-touch-lite/","downloadUrl":"https://apps.microsoft.com/detail/9P04LDHZ68T4?cid=website","image":"https://marko1995srb.github.io/cad-touch-lite/img/hero.jpg","author":{"@type":"Organization","name":"Marko Nedic software"}}
+</script>
 <link rel="icon" href="img/icon-64.png" sizes="64x64">
 <link rel="apple-touch-icon" href="img/icon-192.png">
 <link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high">
@@ -36,6 +43,9 @@ header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 8
 .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--btn-text);box-shadow:0 8px 24px -8px var(--accent2)}
 .btn.small{padding:8px 14px;font-size:14px;border-radius:10px}
 .btn svg{width:18px;height:18px}
+.badge{display:inline-block;border-radius:8px;transition:transform .15s}
+.badge:hover{transform:translateY(-1px)}
+.badge img{display:block;height:56px;width:auto}
 .hero{padding:72px 0 40px;text-align:center;background:radial-gradient(1000px 500px at 50% -10%,var(--bg2),transparent 70%)}
 .eyebrow{display:inline-block;margin:0 0 18px;padding:5px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--muted)}
 h1{margin:0 auto;max-width:820px;font-size:clamp(36px,6vw,64px);line-height:1.05;letter-spacing:-.025em;font-weight:700}
@@ -86,7 +96,7 @@ footer p{margin:0;max-width:640px}
   <div class="wrap nav">
     <a class="brand" href="#top"><img src="img/icon-64.png" width="32" height="32" alt=""><span>CAD Touch Lite</span></a>
     <nav aria-label="Main"><a href="#features">Features</a><a href="#faq">FAQ</a><a href="privacy.html">Privacy</a></nav>
-    <a class="btn primary small" href="https://apps.microsoft.com/detail/9P04LDHZ68T4">Get the app</a>
+    <a class="btn primary small" href="https://apps.microsoft.com/detail/9P04LDHZ68T4?cid=website-header">Get the app</a>
   </div>
 </header>
 
@@ -97,9 +107,8 @@ footer p{margin:0;max-width:640px}
       <h1>Your drawings, <span>at your fingertips.</span></h1>
       <p class="lead">Pinch, pan and measure with your finger. Fast, lightweight and fully offline – made for the job site, not the desk.</p>
       <div class="cta">
-        <a class="btn primary" href="https://apps.microsoft.com/detail/9P04LDHZ68T4">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h8.5v8.5H3zM12.5 3H21v8.5h-8.5zM3 12.5h8.5V21H3zM12.5 12.5H21V21h-8.5z"/></svg>
-          Get it from the Microsoft Store</a>
+        <a class="badge" href="https://apps.microsoft.com/detail/9P04LDHZ68T4?cid=website-hero">
+          <picture><source media="(prefers-color-scheme: light)" srcset="https://get.microsoft.com/images/en-us%20dark.svg"><img src="https://get.microsoft.com/images/en-us%20light.svg" width="205" height="56" alt="Get it from Microsoft"></picture></a>
         <span class="note">Free to try</span>
       </div>
       <figure class="shot" style="margin-bottom:0">
@@ -142,7 +151,7 @@ footer p{margin:0;max-width:640px}
         <div class="card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>
           <h3>Native on ARM and x64</h3>
-          <p>Runs natively on Snapdragon tablets as well as Intel and AMD laptops and 2-in-1s.</p>
+          <p>Runs natively on Snapdragon tablets with Windows 11 24H2 or newer, and on Intel and AMD laptops and 2-in-1s.</p>
         </div>
         <div class="card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
@@ -184,7 +193,8 @@ footer p{margin:0;max-width:640px}
       <div class="price">
         <h2>Try it on your own drawings</h2>
         <p>Download CAD Touch Lite from the Microsoft Store and open your drawings for free. Monthly and yearly subscription plans, with a free first month, are planned.</p>
-        <a class="btn primary" href="https://apps.microsoft.com/detail/9P04LDHZ68T4">Get it from the Microsoft Store</a>
+        <a class="badge" href="https://apps.microsoft.com/detail/9P04LDHZ68T4?cid=website-pricing">
+          <picture><source media="(prefers-color-scheme: light)" srcset="https://get.microsoft.com/images/en-us%20dark.svg"><img src="https://get.microsoft.com/images/en-us%20light.svg" width="205" height="56" alt="Get it from Microsoft" loading="lazy"></picture></a>
       </div>
     </div>
   </section>
@@ -196,7 +206,7 @@ footer p{margin:0;max-width:640px}
       <details><summary>Which files can it open?</summary><p>DWG (AutoCAD R13 to 2018 and newer formats) and DXF. A DWG is converted once and saved in Documents\CAD Touch Lite, so it reopens in seconds next time.</p></details>
       <details><summary>Can I edit drawings?</summary><p>No. CAD Touch Lite is a viewer: it opens, measures and shows drawings, but it does not change or save them.</p></details>
       <details><summary>Does it need an internet connection?</summary><p>No. Drawings are opened and converted on your device. The app only contacts the Microsoft Store to check its license.</p></details>
-      <details><summary>Which devices are supported?</summary><p>Windows 10 (version 1809 or newer) and Windows 11, on ARM64 (Snapdragon) and x64 (Intel, AMD). It is made for touch, but mouse and keyboard work too.</p></details>
+      <details><summary>Which devices are supported?</summary><p>Windows 11 on ARM64 (Snapdragon); Windows 10 (version 1809 or newer) or Windows 11 on x64 (Intel, AMD). It is made for touch, but mouse and keyboard work too.</p></details>
       <details><summary>Is my data collected?</summary><p>No. There is no analytics, tracking or advertising. See the <a href="privacy.html">privacy policy</a>.</p></details>
     </div>
   </section>
