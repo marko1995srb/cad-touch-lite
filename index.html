@@ -20,6 +20,7 @@
 <link rel="icon" href="img/icon-64.png" sizes="64x64">
 <link rel="apple-touch-icon" href="img/icon-192.png">
 <link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high">
+<script src="consent.js" defer></script>
 <style>
 :root{--bg:#0b1424;--bg2:#0f2140;--card:rgba(255,255,255,.045);--line:rgba(140,190,255,.16);--text:#e8eef8;--muted:#9fb0c8;--accent:#5cc6ff;--accent2:#2f8cff;--btn-text:#04111f;--shadow:0 30px 80px -20px rgba(0,0,0,.6)}
 @media (prefers-color-scheme:light){:root{--bg:#f6f8fc;--bg2:#e9f0fb;--card:#fff;--line:rgba(20,60,120,.12);--text:#0e1a2b;--muted:#51627a;--accent:#0a74da;--accent2:#0a74da;--btn-text:#fff;--shadow:0 30px 70px -25px rgba(10,40,90,.35)}}
@@ -207,16 +208,24 @@ footer p{margin:0;max-width:640px}
       <details><summary>Can I edit drawings?</summary><p>No. CAD Touch Lite is a viewer: it opens, measures and shows drawings, but it does not change or save them.</p></details>
       <details><summary>Does it need an internet connection?</summary><p>No. Drawings are opened and converted on your device. The app only contacts the Microsoft Store to check its license.</p></details>
       <details><summary>Which devices are supported?</summary><p>Windows 11 on ARM64 (Snapdragon); Windows 10 (version 1809 or newer) or Windows 11 on x64 (Intel, AMD). It is made for touch, but mouse and keyboard work too.</p></details>
-      <details><summary>Is my data collected?</summary><p>No. There is no analytics, tracking or advertising. See the <a href="privacy.html">privacy policy</a>.</p></details>
+      <details><summary>Is my data collected?</summary><p>Not by the app: it has no analytics, tracking or advertising, and your drawings never leave your device. <span data-tags="on" hidden>This website uses advertising cookies only if you accept them in the cookie notice. </span>See the <a href="privacy.html">privacy policy</a>.</p></details>
+      <details><summary>How do I uninstall it?</summary><p>Open Windows Settings → Apps → Installed apps, find CAD Touch Lite and choose Uninstall, or right-click the app in the Start menu and choose Uninstall. Converted drawings stay in Documents\CAD Touch Lite until you delete them.</p></details>
+      <details><summary>Where can I get help or report a problem?</summary><p>Write on the <a href="https://github.com/marko1995srb/cad-touch-lite/issues">support page</a> and say what happened and which Windows version you use. The page is public, so please do not post confidential drawings there.</p></details>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <p>© 2026 Marko Nedic software · <a href="privacy.html">Privacy policy</a></p>
+    <p>© 2026 Marko Nedic software, an independent developer · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms and license</a> · <a href="https://github.com/marko1995srb/cad-touch-lite/issues">Support</a><span data-tags="on" hidden> · <a href="#" data-cookie-settings>Cookie settings</a></span></p>
     <p>AutoCAD is a registered trademark of Autodesk, Inc. CAD Touch Lite is not affiliated with or endorsed by Autodesk. DWG reading is powered by LibreDWG (GNU GPL v3).</p>
   </div>
 </footer>
+<script>
+/* A campaign tag in the page address (?cid=...) is passed on to the Microsoft Store links. Nothing is stored. */
+(function(){var m=/[?&]cid=([A-Za-z0-9_.-]{1,60})(?:&|#|$)/.exec(location.search);if(!m)return;
+var a=document.querySelectorAll('a[href*="apps.microsoft.com/detail/"]');
+for(var i=0;i<a.length;i++)a[i].href=a[i].href.replace(/([?&]cid=)[^&#]*/,'$1'+m[1]);})();
+</script>
 </body>
 </html>
