@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://marko1995srb.github.io/cad-touch-lite/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CAD Touch Lite (DWG & DXF Viewer)","description":"DWG and DXF viewer: open big drawings in seconds and pin numbered notes with photos right on them. A 48 MB drawing opens in about 2–3 s on a Snapdragon 860 tablet. Hand over the notes as a PDF report – offline, no account.","applicationCategory":"DesignApplication","operatingSystem":"Windows 10 (version 1809 or newer), Windows 11","url":"https://marko1995srb.github.io/cad-touch-lite/","downloadUrl":"https://apps.microsoft.com/detail/9P04LDHZ68T4?cid=website","image":"https://marko1995srb.github.io/cad-touch-lite/img/hero.jpg","author":{"@type":"Organization","name":"Marko Nedic software"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CAD Touch Lite (DWG & DXF Viewer)","description":"DWG and DXF viewer: open big drawings in seconds and pin numbered notes with photos right on them. A 48 MB drawing opens in about 2–3 s on a Snapdragon 860 tablet. Hand over the notes as a PDF report – offline, no account.","applicationCategory":"DesignApplication","operatingSystem":"Windows 10 (version 1809 or newer), Windows 11, Android 8.0 or newer","url":"https://marko1995srb.github.io/cad-touch-lite/","downloadUrl":"https://apps.microsoft.com/detail/9P04LDHZ68T4?cid=website","image":"https://marko1995srb.github.io/cad-touch-lite/img/hero.jpg","author":{"@type":"Organization","name":"Marko Nedic software"}}
 </script>
 <link rel="icon" href="img/icon-64.png" sizes="64x64">
 <link rel="apple-touch-icon" href="img/icon-192.png">
@@ -42,6 +42,7 @@ header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 8
 .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:12px;font-weight:600;font-size:16px;transition:transform .15s,box-shadow .15s}
 .btn:hover{text-decoration:none;transform:translateY(-1px)}
 .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--btn-text);box-shadow:0 8px 24px -8px var(--accent2)}
+.btn.ghost{border:1px solid var(--line);color:var(--text);background:var(--card)}
 .btn.small{padding:8px 14px;font-size:14px;border-radius:10px}
 .btn svg{width:18px;height:18px}
 .badge{display:inline-block;border-radius:8px;transition:transform .15s}
@@ -59,6 +60,11 @@ h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-
 .stat{padding:22px 24px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
 .stat b{display:block;font-size:34px;line-height:1.1;letter-spacing:-.02em;color:var(--accent)}
 .stat span{color:var(--muted);font-size:15px}
+.trust{margin:22px 0 0;font-size:15px;font-weight:600;letter-spacing:.01em;color:var(--text)}
+.trust b{color:var(--accent);font-weight:600;padding:0 6px}
+.steps{max-width:560px;margin:0 auto 26px;padding:0;list-style:none;counter-reset:s;text-align:left}
+.steps li{counter-increment:s;position:relative;padding:0 0 10px 38px;color:var(--muted)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;border:1px solid var(--line);color:var(--accent);font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center}
 .foot{font-size:13.5px;color:var(--muted);margin:8px 2px 0}
 section{padding:64px 0}
 h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;line-height:1.15;margin:0 0 12px}
@@ -77,6 +83,9 @@ h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;line-height:1.15;margin:
 .price{text-align:center;padding:48px 24px;border:1px solid var(--line);border-radius:20px;background:radial-gradient(600px 240px at 50% 0,var(--bg2),transparent 80%),var(--card)}
 .price h2{margin-bottom:8px}
 .price p{color:var(--muted);margin:0 auto 26px;max-width:520px}
+.price .eyebrow{margin:0 auto 18px}
+.price .trust{margin:24px auto 0;color:var(--text)}
+.price .foot{margin:14px auto 0;max-width:620px;font-size:14.5px}
 details{border-bottom:1px solid var(--line);padding:18px 0}
 details:first-of-type{border-top:1px solid var(--line)}
 summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
@@ -96,7 +105,7 @@ footer p{margin:0;max-width:640px}
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top"><img src="img/icon-64.png" width="32" height="32" alt=""><span>CAD Touch Lite</span></a>
-    <nav aria-label="Main"><a href="#notes">Notes</a><a href="#features">Features</a><a href="#faq">FAQ</a><a href="privacy.html">Privacy</a></nav>
+    <nav aria-label="Main"><a href="#android">Android</a><a href="#notes">Notes</a><a href="#features">Features</a><a href="#faq">FAQ</a><a href="privacy.html">Privacy</a></nav>
     <a class="btn primary small" href="https://apps.microsoft.com/detail/9P04LDHZ68T4?cid=website-header">Get the app</a>
   </div>
 </header>
@@ -104,14 +113,16 @@ footer p{margin:0;max-width:640px}
 <main id="top">
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">DWG &amp; DXF viewer for Windows tablets</p>
+      <p class="eyebrow">DWG &amp; DXF viewer for Windows tablets · Android now in testing</p>
       <h1>Open big drawings in seconds. <span>Pin your notes right on them.</span></h1>
       <p class="lead">A 48 MB drawing opens in about 2–3 seconds on a Snapdragon 860 tablet. On site, pin numbered notes with photos to the exact spot and hand over a PDF report – offline, with no account.</p>
       <div class="cta">
         <a class="badge" href="https://apps.microsoft.com/detail/9P04LDHZ68T4?cid=website-hero">
           <picture><source media="(prefers-color-scheme: light)" srcset="https://get.microsoft.com/images/en-us%20dark.svg"><img src="https://get.microsoft.com/images/en-us%20light.svg" width="205" height="56" alt="Get it from Microsoft"></picture></a>
         <span class="note">Everything is free today</span>
+        <a class="btn ghost" href="#android">Android: join the test</a>
       </div>
+      <p class="trust">No ads<b>·</b>No account<b>·</b>Works offline</p>
       <figure class="shot" style="margin-bottom:0">
         <img src="img/hero.jpg" width="1400" height="837" alt="CAD Touch Lite showing a floor plan with more than 300,000 elements" fetchpriority="high">
       </figure>
@@ -121,6 +132,27 @@ footer p{margin:0;max-width:640px}
         <div class="stat"><b>~10 MB</b><span>download – small and quick to install</span></div>
       </div>
       <p class="foot" style="text-align:left">*Measured on a Snapdragon 860 tablet with a 48 MB DXF file. Opening time depends on the device and the drawing.</p>
+    </div>
+  </section>
+
+  <section id="android">
+    <div class="wrap">
+      <div class="price">
+        <p class="eyebrow">New: Android</p>
+        <h2>Android: now in testing on Google Play</h2>
+        <p>CAD Touch Lite for Android phones, tablets and foldables (Android 8.0 or newer, 64-bit) is in a closed test on Google Play, where it is listed as “CAD Touch: DWG + Photo Notes”. Join the test and try it on your own drawings: in the test version everything is unlocked and nothing is sold. The public release on Google Play is coming soon.</p>
+        <ol class="steps">
+          <li>Join the <a href="https://groups.google.com/g/cad-touch-testers">tester group</a> with your Google account.</li>
+          <li>Open the <a href="https://play.google.com/apps/testing/com.markonedic.cadtouch">test page</a> and tap “Become a tester”.</li>
+          <li>Install the app from Google Play with the same Google account.</li>
+        </ol>
+        <div class="cta">
+          <a class="btn primary" href="https://play.google.com/apps/testing/com.markonedic.cadtouch">Join the test on Google Play</a>
+          <a class="btn ghost" href="https://groups.google.com/g/cad-touch-testers">Tester group</a>
+        </div>
+        <p class="trust">No ads<b>·</b>No account<b>·</b>Works offline<b>·</b>15 languages</p>
+        <p class="foot">In the released Android app, opening and viewing drawings and measuring one distance at a time will be free. The Pro subscription, billed monthly or yearly by Google Play with the first month free for new subscribers, adds perimeter, area, diameter and point coordinates, keeps every measurement saved on the drawing, and unlocks notes with photos and the PDF report.</p>
+      </div>
     </div>
   </section>
 
@@ -181,8 +213,8 @@ footer p{margin:0;max-width:640px}
         </div>
         <div class="card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-          <h3>13 languages</h3>
-          <p>English, Srpski, Deutsch, Français, Español, Italiano, Português, Русский, Polski, Türkçe, 简体中文, 日本語, हिन्दी.</p>
+          <h3>13 languages on Windows, 15 on Android</h3>
+          <p>English, Srpski, Deutsch, Français, Español, Italiano, Português, Русский, Polski, Türkçe, 简体中文, 日本語, हिन्दी. The Android app also speaks Hrvatski and Slovenščina.</p>
         </div>
       </div>
     </div>
@@ -237,10 +269,11 @@ footer p{margin:0;max-width:640px}
       <details><summary>Can I edit drawings?</summary><p>No. CAD Touch Lite is a viewer: it opens, measures and shows drawings, but it does not change or save them. Notes you pin to a drawing are stored separately on your device; the drawing file itself is never changed.</p></details>
       <details><summary>Is it free?</summary><p>Today everything is free, including measuring and notes on drawings. Opening and viewing drawings will stay free. Measuring and notes will later become the paid Pro features, sold through the Microsoft Store as a monthly or yearly subscription with a free first month, or as a one-time purchase. A subscription can be cancelled at any time in your Microsoft account.</p></details>
       <details><summary>Does it need an internet connection?</summary><p>No. Drawings are opened and converted on your device. The app only contacts the Microsoft Store to check its license.</p></details>
-      <details><summary>Which devices are supported?</summary><p>Windows 11 on ARM64 (Snapdragon); Windows 10 (version 1809 or newer) or Windows 11 on x64 (Intel, AMD). It is made for touch, but mouse and keyboard work too.</p></details>
+      <details><summary>Which devices are supported?</summary><p>Windows 11 on ARM64 (Snapdragon); Windows 10 (version 1809 or newer) or Windows 11 on x64 (Intel, AMD). It is made for touch, but mouse and keyboard work too. Android: phones, tablets and foldables with Android 8.0 or newer (64-bit), now in testing on Google Play.</p></details>
+      <details><summary>Is there an Android version?</summary><p>Yes. It is in a closed test on Google Play now, and the public release is coming soon. To join, enter the <a href="https://groups.google.com/g/cad-touch-testers">tester group</a> with your Google account, tap “Become a tester” on the <a href="https://play.google.com/apps/testing/com.markonedic.cadtouch">test page</a> and install the app from Google Play. In the test version everything is unlocked and nothing is sold. Like the Windows app it has no ads, needs no account and works offline; your drawings, notes, measurements and pictures stay on your device. It is available in 15 languages: the 13 of the Windows app plus Hrvatski and Slovenščina.</p></details>
       <details><summary>Is my data collected?</summary><p>Not by the app: it has no analytics, tracking or advertising, and your drawings never leave your device. <span data-tags="on" hidden>This website uses advertising cookies only if you accept them in the cookie notice. </span>See the <a href="privacy.html">privacy policy</a>.</p></details>
       <details><summary>How do I uninstall it?</summary><p>Open Windows Settings → Apps → Installed apps, find CAD Touch Lite and choose Uninstall, or right-click the app in the Start menu and choose Uninstall. Converted drawings and your notes stay in Documents\CAD Touch Lite until you delete them.</p></details>
-      <details><summary>Where can I get help or report a problem?</summary><p>Write on the <a href="https://github.com/marko1995srb/cad-touch-lite/issues">support page</a> and say what happened and which Windows version you use. The page is public, so please do not post confidential drawings there.</p></details>
+      <details><summary>Where can I get help or report a problem?</summary><p>Write on the <a href="https://github.com/marko1995srb/cad-touch-lite/issues">support page</a> and say what happened and which Windows or Android version and device you use. The page is public, so please do not post confidential drawings there.</p></details>
     </div>
   </section>
 </main>
@@ -248,7 +281,7 @@ footer p{margin:0;max-width:640px}
 <footer>
   <div class="wrap">
     <p>© 2026 Marko Nedic software, an independent developer · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms and license</a> · <a href="https://github.com/marko1995srb/cad-touch-lite/issues">Support</a><span data-tags="on" hidden> · <a href="#" data-cookie-settings>Cookie settings</a></span></p>
-    <p>AutoCAD is a registered trademark of Autodesk, Inc. CAD Touch Lite is not affiliated with or endorsed by Autodesk. DWG reading is powered by LibreDWG (GNU GPL v3).</p>
+    <p>AutoCAD is a registered trademark of Autodesk, Inc. CAD Touch Lite is not affiliated with or endorsed by Autodesk. On Windows, DWG reading is powered by LibreDWG (GNU GPL v3); on Android, by ACadSharp (MIT).</p>
   </div>
 </footer>
 <script>
