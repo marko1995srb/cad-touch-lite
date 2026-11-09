@@ -8,10 +8,12 @@
   var TAGS = {
     microsoftUet: '', // Microsoft Advertising: Conversions > UET tag > Tag ID (digits). Keep "Enable Microsoft Clarity" off.
     reddit: '',       // Reddit Ads: Events Manager > Pixel ID
-    meta: '',         // Meta Events Manager: Pixel (dataset) ID (digits)
-    google: ''        // Google Ads: Google tag ID (AW-...)
+    meta: '1498652038875402',         // Meta Events Manager: Pixel (dataset) ID (digits)
+    google: '',       // Google Ads: Google tag ID (AW-...)
+    ga4: 'G-FN9R4LZECL',          // Google Analytics 4: Admin > Data streams > Measurement ID (G-...)
+    tiktok: ''        // TikTok Ads Manager: Tools > Events > Web events > Pixel ID
   };
-  var NOTICE_VERSION = 1; // raise when purposes or recipients change: everyone is then asked again
+  var NOTICE_VERSION = 2; // raise when purposes or recipients change: everyone is then asked again
   var KEEP_DAYS = 183;    // a choice (Accept or Decline) is remembered for about six months
   var KEY = 'ctl-consent';
 
@@ -63,18 +65,22 @@
       window.fbq('init', id);
       window.fbq('track', 'PageView');
     }
-    if ((id = TAGS.google)) {
+    var gids = [TAGS.google, TAGS.ga4].filter(function (x) { return !!x; });
+    if (gids.length) {  // one Google tag script serves both Google Ads (AW-) and Analytics (G-)
       window.dataLayer = window.dataLayer || [];
       window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
       window.gtag('consent', 'default', { 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'ad_storage': 'denied', 'analytics_storage': 'denied' });
       window.gtag('consent', 'update', { 'ad_user_data': 'granted', 'ad_personalization': 'granted', 'ad_storage': 'granted', 'analytics_storage': 'granted' });
       window.gtag('js', new Date());
-      window.gtag('config', id);
+      for (var gi = 0; gi < gids.length; gi++) window.gtag('config', gids[gi]);
       var g = document.createElement('script');
       g.async = true;
-      g.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+      g.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gids[0]);
       var first = document.getElementsByTagName('script')[0];
       first.parentNode.insertBefore(g, first);
+    }
+    if ((id = TAGS.tiktok)) {
+      !function (w, d, t) { w.TiktokAnalyticsObject = t; var ttq = w[t] = w[t] || []; ttq.methods = ['page', 'track', 'identify', 'instances', 'debug', 'on', 'off', 'once', 'ready', 'alias', 'group', 'enableCookie', 'disableCookie', 'holdConsent', 'revokeConsent', 'grantConsent']; ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))); }; }; for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]); ttq.instance = function (t) { for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++) ttq.setAndDefer(e, ttq.methods[n]); return e; }; ttq.load = function (e, n) { var r = 'https://analytics.tiktok.com/i18n/pixel/events.js'; ttq._i = ttq._i || {}; ttq._i[e] = []; ttq._i[e]._u = r; ttq._t = ttq._t || {}; ttq._t[e] = +new Date(); ttq._o = ttq._o || {}; ttq._o[e] = n || {}; var s = d.createElement('script'); s.type = 'text/javascript'; s.async = !0; s.src = r + '?sdkid=' + e + '&lib=' + t; var f = d.getElementsByTagName('script')[0]; f.parentNode.insertBefore(s, f); }; ttq.load(id); ttq.page(); }(window, document, 'ttq');
     }
   }
 
@@ -86,6 +92,8 @@
       if (TAGS.reddit && window.rdt) window.rdt('track', 'Custom', { customEventName: 'store_click' });
       if (TAGS.meta && window.fbq) window.fbq('trackCustom', 'store_click', { label: label });
       if (TAGS.google && window.gtag) window.gtag('event', 'store_click', { 'event_label': label, 'send_to': TAGS.google });
+      if (TAGS.ga4 && window.gtag) window.gtag('event', 'store_click', { 'event_label': label, 'send_to': TAGS.ga4 });
+      if (TAGS.tiktok && window.ttq) window.ttq.track('ClickButton', { content_name: 'store_click', description: label });
     } catch (e) { }
   }
   document.addEventListener('click', function (ev) {
@@ -97,7 +105,8 @@
 
   // Withdrawing: delete what the tags stored on this website, then reload so that nothing keeps running.
   function forget() {
-    var names = ['_uetsid', '_uetvid', '_uetmsclkid', '_uetsid_exp', '_uetvid_exp', '_uetuid', '_rdt_uuid', '_rdt_cid', '_rdt_em', '_fbp', '_fbc', '_gcl_au', '_gcl_aw', '_gcl_dc', '_gcl_gs'];
+    var names = ['_uetsid', '_uetvid', '_uetmsclkid', '_uetsid_exp', '_uetvid_exp', '_uetuid', '_rdt_uuid', '_rdt_cid', '_rdt_em', '_fbp', '_fbc', '_gcl_au', '_gcl_aw', '_gcl_dc', '_gcl_gs', '_ga', '_ttp', '_tt_enable_cookie'];
+    document.cookie.split(';').forEach(function (c) { var n = c.split('=')[0].trim(); if (/^_ga_/.test(n)) names.push(n); });
     var host = location.hostname.split('.'), domains = [''], i, j;
     for (i = 0; i < host.length - 1; i++) domains.push('; domain=.' + host.slice(i).join('.'));
     for (i = 0; i < names.length; i++) {
@@ -135,7 +144,7 @@
     box.setAttribute('role', 'region');
     box.setAttribute('aria-label', 'Cookie notice');
     var p = document.createElement('p');
-    p.appendChild(document.createTextNode('We would like to use cookies and similar technologies to measure our advertising and to show you our ads on other sites. This shares data about your visit with the advertising companies named in our '));
+    p.appendChild(document.createTextNode('We would like to use cookies and similar technologies to count visits, measure our advertising and show you our ads on other sites. This shares data about your visit with the companies named in our '));
     var a = document.createElement('a');
     a.href = 'privacy.html#website';
     a.textContent = 'privacy policy';
