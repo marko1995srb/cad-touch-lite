@@ -11,7 +11,7 @@
     meta: '1498652038875402',         // Meta Events Manager: Pixel (dataset) ID (digits)
     google: '',       // Google Ads: Google tag ID (AW-...)
     ga4: 'G-FN9R4LZECL',          // Google Analytics 4: Admin > Data streams > Measurement ID (G-...)
-    tiktok: ''        // TikTok Ads Manager: Tools > Events > Web events > Pixel ID
+    tiktok: 'DBP3BBBC77U9PB4O8E60'        // TikTok Ads Manager: Tools > Events > Web events > Pixel ID
   };
   var NOTICE_VERSION = 2; // raise when purposes or recipients change: everyone is then asked again
   var KEEP_DAYS = 183;    // a choice (Accept or Decline) is remembered for about six months
