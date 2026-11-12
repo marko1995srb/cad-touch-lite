@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DWG viewer speed test on Android: 7 apps, one 21.9 MB drawing – CAD Touch</title>
+<meta name="description" content="We opened the same 21.9 MB DWG (429,000 objects) in 7 Android DWG apps on a Galaxy Z Fold 2. CAD Touch: 3.2 s first open, 0.8 s again. Full method, every run and the limits of the test.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0b1424">
+<meta property="og:title" content="DWG viewer speed test on Android: 7 apps, one 21.9 MB drawing">
+<meta property="og:description" content="Same phone, same drawing, 5 runs each. CAD Touch opened it in 3.2 s (0.8 s again). Method and every run inside.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://cadtouch.app/speed">
+<meta property="og:site_name" content="CAD Touch">
+<meta property="og:image" content="https://cadtouch.app/img/speed-test-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://cadtouch.app/speed">
+<link rel="icon" href="img/icon-64.png" sizes="64x64">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"DWG viewer speed test on Android: 7 apps, one 21.9 MB drawing","description":"Opening time of the same 21.9 MB DWG drawing (429,000 objects) in 7 Android DWG apps on a Galaxy Z Fold 2, median of 5 runs, with the full method and limits.","datePublished":"2026-11-12","dateModified":"2026-11-12","inLanguage":"en","image":"https://cadtouch.app/img/speed-test.jpg","mainEntityOfPage":"https://cadtouch.app/speed","author":{"@type":"Organization","name":"Marko Nedic software","url":"https://cadtouch.app/"},"publisher":{"@type":"Organization","name":"Marko Nedic software","url":"https://cadtouch.app/","logo":{"@type":"ImageObject","url":"https://cadtouch.app/img/icon-192.png"}},"about":{"@type":"SoftwareApplication","name":"CAD Touch: DWG + Photo Notes","operatingSystem":"Android","applicationCategory":"DesignApplication","url":"https://play.google.com/store/apps/details?id=com.markonedic.cadtouch"}}
+</script>
+<script src="consent.js" defer></script>
+<style>
+:root{--bg:#0b1424;--card:rgba(255,255,255,.045);--line:rgba(140,190,255,.16);--text:#e8eef8;--muted:#9fb0c8;--accent:#5cc6ff}
+@media (prefers-color-scheme:light){:root{--bg:#f6f8fc;--card:#fff;--line:rgba(20,60,120,.12);--text:#0e1a2b;--muted:#51627a;--accent:#0a74da}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 "Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--text);font-weight:650;font-size:18px}
+.brand:hover{text-decoration:none}
+.brand img{width:32px;height:32px;border-radius:8px}
+main{padding:44px 0 64px}
+h1{font-size:clamp(30px,5vw,44px);letter-spacing:-.02em;line-height:1.1;margin:0 0 14px}
+h2{font-size:clamp(22px,3.2vw,28px);letter-spacing:-.015em;line-height:1.2;margin:44px 0 10px}
+p,li{color:var(--muted)}
+p{margin:0 0 14px}
+strong{color:var(--text)}
+.lead{font-size:clamp(17px,2.2vw,20px)}
+.meta{font-size:14.5px}
+figure{margin:28px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0c1830}
+figcaption{padding:10px 14px;font-size:14px;color:var(--muted);background:var(--card)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card);margin:18px 0}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:15.5px;font-variant-numeric:tabular-nums}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td{color:var(--text)}
+td small{color:var(--muted);display:block;font-size:13.5px}
+tr.us td{font-weight:650}
+tr.us td:first-child{color:var(--accent)}
+ul{padding-left:20px;margin:0 0 14px}
+li{margin-bottom:6px}
+.cta{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;margin:26px 0 0}
+.cta img{height:83px;margin:-13px -12px}
+.trust{font-weight:600;color:var(--text)}
+footer{border-top:1px solid var(--line);padding:28px 0 44px;font-size:14px;color:var(--muted)}
+footer p{margin:0 0 8px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/"><img src="img/icon-64.png" width="32" height="32" alt=""><span>CAD Touch</span></a>
+    <a href="/">Home</a>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <h1>DWG viewer speed test on Android: 7 apps, one 21.9 MB drawing</h1>
+    <p class="lead"><strong>Result:</strong> on a Galaxy Z Fold 2, CAD Touch opened a 21.9 MB DWG drawing with about 429,000 objects in <strong>3.2 seconds</strong> the first time and in <strong>0.8 seconds</strong> the second time. It was the fastest of the 7 free-to-download DWG apps we tested. The next fastest needed 4.5 seconds.</p>
+    <p class="meta">Tested on November 11, 2026 by Marko Nedic software, the maker of CAD Touch. This is our own test, not an independent one, so the full method, every single run and the limits are below. You can repeat it on your own phone.</p>
+
+    <figure>
+      <picture><source srcset="img/speed-test.webp" type="image/webp"><img src="img/speed-test.jpg" width="1080" height="1350" alt="Bar chart of DWG opening times on a Galaxy Z Fold 2: CAD Touch 3.2 s first open and 0.8 s again, CAD Reader 4.5 s and 4.4 s, DWG FastView 5.0 s and 4.5 s including an ad, ZWCAD Mobile 7.4 s and 7.2 s, AutoCAD 15.2 s and 15.7 s"></picture>
+      <figcaption>Lower is faster. Median of 5 runs per app (4 counted for the first open of DWG FastView), with the app closed before each run.</figcaption>
+    </figure>
+
+    <h2>Results</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>App (version)</th><th>First open</th><th>Open again</th><th>Ad before the drawing</th></tr></thead>
+        <tbody>
+          <tr class="us"><td>CAD Touch 1.7</td><td>3.2 s</td><td>0.8 s</td><td>No</td></tr>
+          <tr><td>CAD Reader 3.9.0</td><td>4.5 s</td><td>4.4 s</td><td>No</td></tr>
+          <tr><td>DWG FastView 5.18.9</td><td>5.0 s<small>best case, see notes</small></td><td>4.5 s<small>best case, see notes</small></td><td>Yes, a full-screen ad in all 10 runs</td></tr>
+          <tr><td>ZWCAD Mobile 5.6.9</td><td>7.4 s</td><td>7.2 s</td><td>No</td></tr>
+          <tr><td>AutoCAD 6.24.1</td><td>15.2 s</td><td>15.7 s</td><td>No (a subscription banner over the drawing)</td></tr>
+          <tr><td>ARES Touch 26.0.0</td><td colspan="2">The drawing did not appear within 60 s</td><td>A subscription offer on opening</td></tr>
+          <tr><td>SnapCAD 1.2.49</td><td colspan="2">Did not open the file from the file manager</td><td>An ad banner</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Every run, in seconds (first open / open again):</p>
+    <ul>
+      <li><strong>CAD Touch:</strong> 3.0, 4.0, 3.2, 3.2, 4.2 / 0.8, 1.9, 1.8, 0.7, 0.8</li>
+      <li><strong>CAD Reader:</strong> 4.8, 4.2, 4.5, 4.3, 4.5 / 4.7, 4.7, 4.4, 4.4, 4.3</li>
+      <li><strong>ZWCAD Mobile:</strong> 7.5, 7.2, 7.5, 7.4, 7.2 / 7.0, 7.1, 7.4, 7.3, 7.2</li>
+      <li><strong>AutoCAD:</strong> 14.1, 16.3, 15.2, 14.8, 18.0 / 15.7, 15.7, 18.6, 14.5, 14.2</li>
+      <li><strong>DWG FastView:</strong> the close button of the ad appeared after 15, 5, 4 and 3 s (first open; one run is not counted, see notes) and after 3, 4, 4, 3 and 5 s (open again); the drawing was visible about 0.5 s after the ad was closed.</li>
+    </ul>
+
+    <h2>How we tested</h2>
+    <ul>
+      <li><strong>Phone:</strong> Samsung Galaxy Z Fold 2 (SM-F916B, released in 2020), Android 13, on Wi-Fi and on the charger.</li>
+      <li><strong>Drawing:</strong> an invented building drawing made for this test, 21.9 MB, DWG 2018 format, about 429,000 objects. We used five copies that differ only in one small text, so no app had the drawing prepared in advance.</li>
+      <li><strong>Apps:</strong> CAD Touch 1.7, and for the other apps the latest versions on Google Play on the test day.</li>
+      <li><strong>Each run:</strong> the app is fully closed (force stop). The drawing is opened the way you would open it from the phone's file manager. The screen is recorded, and the time runs from the first change on the screen until the whole drawing is drawn and still.</li>
+      <li><strong>First open:</strong> a copy of the drawing the app has never seen.</li>
+      <li><strong>Open again:</strong> the same copy once more, after the app was closed again.</li>
+      <li><strong>Result:</strong> 5 runs for each case, and the median is reported. Exceptions: 4 counted runs for the first open of DWG FastView, 2 tries for ARES Touch and 3 for SnapCAD (see notes).</li>
+    </ul>
+
+    <h2>Notes and limits</h2>
+    <ul>
+      <li>This is one phone and one drawing. On another device or with another drawing the times and the order can be different.</li>
+      <li><strong>DWG FastView</strong> showed a full-screen ad on every open, and the drawing was ready behind it. Its numbers are a best case: we assume the ad is closed the moment its close button appears. The moment the button appeared was read from the recording in 1-second steps. One first-open run is not counted, because the tap on the close button opened the advertiser's page.</li>
+      <li><strong>ZWCAD Mobile</strong> was measured in its browse mode, without accepting its terms or signing in.</li>
+      <li><strong>AutoCAD</strong> moves the view while its banners appear, so the moment the drawing was first fully shown was read by hand from the recording, in 0.25-second steps.</li>
+      <li><strong>ARES Touch</strong> showed a black screen for 60 seconds in two tries. <strong>SnapCAD</strong> reported that the drawing structure could not be read, in three tries. Both may behave differently when the file is opened from inside the app.</li>
+      <li>The time includes starting the app, and the screen recording itself uses some of the phone's processor, so every app is a little slower here than in everyday use.</li>
+      <li>We did not measure editing, rendering quality or anything other than the time to open this drawing.</li>
+    </ul>
+
+    <h2>Why CAD Touch reopens so quickly</h2>
+    <p>The first time, CAD Touch reads the DWG and keeps a copy that is ready to draw in the app's cache on the phone. The next time it opens that copy, which is why the second open took 0.8 seconds (median) in our test. If Android clears the app's cache, the next open is a first open again. Nothing is uploaded: the drawing never leaves your device.</p>
+
+    <div class="cta">
+      <a href="https://play.google.com/store/apps/details?id=com.markonedic.cadtouch&amp;utm_source=website&amp;utm_medium=speed"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="214" height="83" alt="Get CAD Touch on Google Play"></a>
+      <span class="trust">No ads · No account · Works offline</span>
+    </div>
+    <p style="margin-top:22px">Questions about the test? Write to <a href="mailto:hello@cadtouch.app">hello@cadtouch.app</a>.</p>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <p><b>CAD Touch. Built for engineers.</b> © 2026 Marko Nedic software · <a href="/">Home</a> · <a href="privacy.html">Privacy policy</a> · <a href="support.html">Support</a></p>
+    <p>AutoCAD, DWG FastView, CAD Reader, ZWCAD, ARES Touch and SnapCAD are trademarks of their respective owners. CAD Touch is not affiliated with or endorsed by any of them. The names are used only to identify the apps that were tested.</p>
+  </div>
+</footer>
+</body>
+</html>
