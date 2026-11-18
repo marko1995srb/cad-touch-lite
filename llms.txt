@@ -10,7 +10,7 @@ Maker: Marko Nedic software, an independent developer (hello@cadtouch.app).
 - Windows app: "CAD Touch Lite (DWG & DXF Viewer)" in the Microsoft Store, Windows 10 (1809 or newer) and Windows 11, x64 and ARM64, 13 languages.
 - iPhone, iPad and Mac: coming soon on the App Store.
 - Opens DWG (AutoCAD R13 to 2018 and newer) and DXF. It is a viewer: it does not edit or save drawings.
-- No ads, no sign-up, no login. Works without an internet connection. Drawings, notes and photos stay on the device. Android: optional usage statistics (no drawing content) only if you allow it.
+- No ads, no sign-up, no login. Works without an internet connection. Drawings, notes and photos stay on the device.
 - Measuring with snapping to line ends and midpoints; layers on and off; light or dark background.
 - Notes: a numbered pin on the drawing with text, photos, a status (open or resolved) and the contractor; a PDF report of all notes or of a filter.
 - Price on Android: installing, opening and viewing drawings and measuring one distance at a time are free. A Pro subscription through Google Play (first month free for new subscribers) adds the other measurements, notes with photos and the PDF report. Windows and Android purchases are separate.
