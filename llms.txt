@@ -9,7 +9,7 @@ Maker: Marko Nedic software, an independent developer (hello@cadtouch.app).
 - Android app: "CAD Touch: DWG, PDF & Measure" on Google Play, package com.markonedic.cadtouch, Android 8.0 or newer, 15 languages.
 - Windows app: "CAD Touch Lite (DWG & DXF Viewer)" in the Microsoft Store, Windows 10 (1809 or newer) and Windows 11, x64 and ARM64, 13 languages.
 - iPhone, iPad and Mac: coming soon on the App Store.
-- Android opens DWG, DXF, PDF, JPG and PNG; Windows opens DWG and DXF. DWG is AutoCAD R13 to 2018 and newer. It is a viewer: it does not edit or save drawings.
+- Android opens DWG, DXF, PDF, JPG and PNG; Windows opens DWG and DXF. DWG is AutoCAD R13 to 2018 and newer. It is a viewer: it never changes the original file (the Android Pro export of a DWG to PDF creates a new file).
 - No ads, no sign-up, no login. Works without an internet connection. Drawings, notes and photos stay on the device.
 - Android PDF reader: search, table of contents, night mode. Measuring on PDF plans and photos on Android, after setting the scale (1:100 or a known length).
 - Measuring with snapping to line ends and midpoints; layers on and off; light or dark background.
