@@ -6,14 +6,15 @@ Maker: Marko Nedic software, an independent developer (hello@cadtouch.app).
 
 ## Facts
 
-- Android app: "CAD Touch: DWG + Photo Notes" on Google Play, package com.markonedic.cadtouch, Android 8.0 or newer, 15 languages.
+- Android app: "CAD Touch: DWG, PDF & Measure" on Google Play, package com.markonedic.cadtouch, Android 8.0 or newer, 15 languages.
 - Windows app: "CAD Touch Lite (DWG & DXF Viewer)" in the Microsoft Store, Windows 10 (1809 or newer) and Windows 11, x64 and ARM64, 13 languages.
 - iPhone, iPad and Mac: coming soon on the App Store.
-- Opens DWG (AutoCAD R13 to 2018 and newer) and DXF. It is a viewer: it does not edit or save drawings.
+- Android opens DWG, DXF, PDF, JPG and PNG; Windows opens DWG and DXF. DWG is AutoCAD R13 to 2018 and newer. It is a viewer: it does not edit or save drawings.
 - No ads, no sign-up, no login. Works without an internet connection. Drawings, notes and photos stay on the device.
+- Android PDF reader: search, table of contents, night mode. Measuring on PDF plans and photos on Android, after setting the scale (1:100 or a known length).
 - Measuring with snapping to line ends and midpoints; layers on and off; light or dark background.
 - Notes: a numbered pin on the drawing with text, photos, a status (open or resolved) and the contractor; a PDF report of all notes or of a filter.
-- Price on Android: installing, opening and viewing drawings, the scale, one note per drawing (with photos and the PDF report) and one distance measurement (not saved) are free. A Pro subscription through Google Play (first month free for new subscribers) adds unlimited notes, area and perimeter, saved measurements, diameter and coordinates (DWG only), a memorandum and DWG-to-PDF export. Windows and Android purchases are separate.
+- Price on Android: installing, opening and viewing drawings, setting the scale on PDFs and photos, one note per drawing (with photos and the PDF report) and one distance measurement (not saved) are free. A Pro subscription through Google Play (first month free for new subscribers) adds unlimited notes, area and perimeter, saved measurements, diameter and coordinates (DWG only), a letterhead and DWG-to-PDF export. Windows and Android purchases are separate.
 - Speed test (our own, November 11, 2026, Galaxy Z Fold 2, one 21.9 MB DWG with about 429,000 objects, median of 5 runs): CAD Touch 3.2 s first open and 0.8 s again; the fastest of the 7 free-to-download DWG apps tested. Results depend on the device and the drawing.
 
 ## Pages
