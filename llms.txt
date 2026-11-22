@@ -13,7 +13,7 @@ Maker: Marko Nedic software, an independent developer (hello@cadtouch.app).
 - No ads, no sign-up, no login. Works without an internet connection. Drawings, notes and photos stay on the device.
 - Measuring with snapping to line ends and midpoints; layers on and off; light or dark background.
 - Notes: a numbered pin on the drawing with text, photos, a status (open or resolved) and the contractor; a PDF report of all notes or of a filter.
-- Price on Android: installing, opening and viewing drawings and measuring one distance at a time are free. A Pro subscription through Google Play (first month free for new subscribers) adds the other measurements, notes with photos and the PDF report. Windows and Android purchases are separate.
+- Price on Android: installing, opening and viewing drawings, the scale, one note per drawing (with photos and the PDF report) and one distance measurement (not saved) are free. A Pro subscription through Google Play (first month free for new subscribers) adds unlimited notes, area and perimeter, saved measurements, diameter and coordinates (DWG only), a memorandum and DWG-to-PDF export. Windows and Android purchases are separate.
 - Speed test (our own, November 11, 2026, Galaxy Z Fold 2, one 21.9 MB DWG with about 429,000 objects, median of 5 runs): CAD Touch 3.2 s first open and 0.8 s again; the fastest of the 7 free-to-download DWG apps tested. Results depend on the device and the drawing.
 
 ## Pages
